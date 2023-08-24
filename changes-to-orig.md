@@ -24,4 +24,6 @@
   frontend
   - keeps old contract address when restarting processes 
     while developing
-- only use [1 sealer backend](https://github.com/Kevin-Mok/provotum-v2/blob/2c7c042ce415b459de12046e2ac8836a7fa6b9f3/voting-authority/backend/src/endpoints/sealers.ts#L3-L4)
+- only use [1 sealer backend](https://github.com/Kevin-Mok/acanet-voting/blob/14cddc3a822357587231a57673fb81846ff6a5a5/voting-authority/backend/src/config.ts#L7-L8)
+  - uncomment sending POST requests to sealers
+    - https://github.com/Kevin-Mok/provotum-v2/blob/2c7c042ce415b459de12046e2ac8836a7fa6b9f3/voting-authority/backend/src/endpoints/sealers.ts#L3-L4

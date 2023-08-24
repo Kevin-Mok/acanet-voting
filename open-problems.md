@@ -14,7 +14,7 @@
     ballot status is not `RESULT` 
     * https://github.com/Kevin-Mok/provotum-v2/blob/d43fad9a53aef99d7dee7c52a8b0dcaab08bccd6/voting-authority/backend/src/utils/ballotManager/ballotManager.ts#L284
 
-### Try
+### To Try
 - run modified code in VM without commented out `getVoteResult` 
   check for RESULT state without 0 votes
   - need to recompile contract and distribute

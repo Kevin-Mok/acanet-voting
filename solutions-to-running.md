@@ -7,24 +7,6 @@
   - when adding more voters, modify [Ganache start script](https://github.com/Kevin-Mok/provotum-v2/blob/db154f413ae08fe2abfab75d7a516e929eefc1f0/ganache-pv.sh#L4) to 
     have the private key
 
-## Voting Authority
-### Prebuilt Docker
-- doesn't start frontend container
-
-## Sealer
-### Local
-- can submit address to voting authority
-- can't load blockchain config
-
-### Local Docker
-- can't find voting authority backend
-
-## Prebuilt
-- voting authority backend can't fetch peers (on local machine, works in VM)
-  - /state 500 {"state":"PAIRING","msg":"Could not get the number of connected authorities (web3.eth.net.getPeerCount)."}
-- tried removing all remote images
-  - doesn't work
-
 # VM
 - created 2 VirtualBox images
   - 1 that runs prebuilt Docker
