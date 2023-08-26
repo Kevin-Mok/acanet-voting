@@ -50,7 +50,7 @@
   },
   "scripts": {
     "start:localhost": "./dev.sh",
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "pre-commit": "lint-staged",
     "test": "react-scripts test",

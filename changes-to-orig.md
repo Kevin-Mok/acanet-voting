@@ -1,15 +1,31 @@
-# Election Process
-- Registration phase
-  - skip since using Ganache blockchain
-- Pairing phase
-  - skip signing up sealers as validators
-- Key Generation phase
-  - generate/submit public key shares from sealers automatically
-  - generate voting authority public key automatically
-- Voting phase
-  - use MetaMask instead to login/vote in voter frontend instead of with credentials
-- Tallying phase
-  - submit decrypted shares from sealers automatically
+# Election Process (Phases)
+## Registration
+- bypass sealer registration since using Ganache blockchain
+  - https://github.com/Kevin-Mok/acanet-voting/blob/fd6c3f718e10f25a3f6a4466d6379d22a7e06bc8/voting-authority/backend/src/endpoints/state.ts#L228-L236
+
+## Pairing
+- skip signing up sealers as validators
+
+## Key Generation
+### Public Key Shares from Sealers
+- generate/submit public key shares from sealers automatically
+- calls [`/generateKeys` endpoint](https://github.com/Kevin-Mok/acanet-voting/blob/fd6c3f718e10f25a3f6a4466d6379d22a7e06bc8/sealer/backend/src/routes/generateKeys.ts#L10) from sealers when 
+  deploying contract which generate/submits public key
+  - https://github.com/Kevin-Mok/acanet-voting/blob/fd6c3f718e10f25a3f6a4466d6379d22a7e06bc8/voting-authority/backend/src/endpoints/deploy.ts#L131
+
+## Voting
+- use MetaMask instead to login/vote in voter frontend instead of with credentials
+  - login = https://github.com/Kevin-Mok/acanet-voting/blob/master/voter-frontend/src/pages/LoginPage.tsx
+  - vote
+    - https://github.com/Kevin-Mok/acanet-voting/blob/master/voter-frontend/src/components/VotingPanel/VotingPanel.tsx
+    - https://github.com/Kevin-Mok/acanet-voting/blob/master/voter-frontend/src/services/ballotService.ts
+
+## Tallying phase
+- submit decrypted shares from sealers automatically when 
+  clicking "Next" on closing ballot
+  - send POST request to sealer backend `/decrypt`
+    - https://github.com/Kevin-Mok/acanet-voting/blob/fd6c3f718e10f25a3f6a4466d6379d22a7e06bc8/voting-authority/backend/src/endpoints/state.ts#L346
+    - https://github.com/Kevin-Mok/acanet-voting/blob/fd6c3f718e10f25a3f6a4466d6379d22a7e06bc8/sealer/backend/src/routes/decrypt.ts#L10
 
 # Code
 - use [local Ganache blockchain](https://github.com/Kevin-Mok/provotum-v2/blob/docs/ganache-pv.sh)
